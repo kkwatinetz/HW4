@@ -1,0 +1,67 @@
+//unit4.hw
+//Group members: Katie Kwatinetz, Lanayia Walters
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+#define TRUE 1
+#define FALSE 0
+
+int main()
+{
+    int *myArray[10];
+    int *index;
+    int *largest;
+    float *total;
+    float *average;
+    int *found;
+    int *temp;
+
+    myArray = malloc(SIZE * sizeof(int));
+    index = malloc(sizeof(int));
+    largest = malloc(sizeof(int));
+    total = malloc(sizeof(float));
+    average = malloc(sizeof(float));
+    found = malloc(sizeof(int));
+    temp = malloc(sizeof(int));
+
+    int myArray[10] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+
+
+    //largest value
+    for(index = 0; index < SIZE; index++)
+    {
+        if (myArray[index] > largest)
+        {
+            largest = array[index];
+        }
+    }
+    printf("1) The largest value is %d. \n\n", large);
+
+    //average
+    total = 0.0;
+    for(index = 0; index < SIZE; index++)
+    {
+        total += myArray[index];
+    }
+    average = total/SIZE;
+
+    printf("2) The average is %.2f\n\n", average);
+
+
+    //duplicate
+    found = FALSE;
+    for (index = 0; index < SIZE && found == FALSE; index++){
+        for(temp = index + 1; temp < SIZE  && found == FALSE; temp++){
+            if (myArray[index] == myArray[temp]){
+                found = TRUE;
+            }
+        }
+    }
+
+    if (found == TRUE) printf("3) The array has duplicates.\n");
+    else printf("3) The array does not have duplicates.\n");
+
+    return 0;
+}
