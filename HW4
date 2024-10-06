@@ -8,29 +8,35 @@
 #define TRUE 1
 #define FALSE 0
 
-int main() 
+int main()
 {
     int *myArray;
     int *index, *largest, *found, *temp;
     float *total, *average;
 
+    // Allocate memory for the array and other variables
     myArray = malloc(SIZE * sizeof(int));
     index = malloc(sizeof(int));
     largest = malloc(sizeof(int));
-    total = malloc(sizeof(int));
+    total = malloc(sizeof(float));  // Allocate as float for accurate summing
     average = malloc(sizeof(float));
     found = malloc(sizeof(int));
     temp = malloc(sizeof(int));
 
+
     // Assign values to the array
-    for (*index = 0; *index < SIZE; *index++) {
-        myArray[*index] = (*index + 1) * 10;
+    int values[SIZE] = {12, 56, 89, 87, 30, 12, 45, 1, 90, 16};
+    for (*index = 0; *index < SIZE; (*index)++)
+    {
+        myArray[*index] = values[*index];
     }
 
     // Find the largest value
     *largest = myArray[0];
-    for (*index = 1; *index < SIZE; *index++) {
-        if (myArray[*index] > *largest) {
+    for (*index = 1; *index < SIZE; (*index)++)
+    {
+        if (myArray[*index] > *largest)
+        {
             *largest = myArray[*index];
         }
     }
@@ -38,27 +44,35 @@ int main()
 
     // Calculate the average
     *total = 0.0;
-    for (*index = 0; *index < SIZE; *index++) {
+    for (*index = 0; *index < SIZE; (*index)++)
+    {
         *total += myArray[*index];
     }
-    *average = *total/ SIZE;
+    *average = *total / SIZE;
     printf("2) The average is %.2f\n\n", *average);
 
     // Check for duplicates
     *found = FALSE;
-    for (*index = 0; *index < SIZE && *found == FALSE; *index++) {
-        for (*temp = *index + 1; *temp < SIZE && *found == FALSE; *temp++) {
-            if (myArray[*index] == myArray[*temp]) {
+    for (*index = 0; *index < SIZE && *found == FALSE; (*index)++)
+    {
+        for (*temp = *index + 1; *temp < SIZE && *found == FALSE; (*temp)++)
+        {
+            if (myArray[*index] == myArray[*temp])
+            {
                 *found = TRUE;
             }
         }
     }
 
-    if (*found == TRUE) {
+    if (*found == TRUE)
+    {
         printf("3) The array has duplicates.\n");
-    } else {
+    }
+    else
+    {
         printf("3) The array does not have duplicates.\n");
     }
+
 
     return 0;
 }
