@@ -30,7 +30,7 @@ int main()
     *(myArray + 2) = 89;
     *(myArray + 3) = 87;
     *(myArray + 4) = 30;
-    *(myArray + 5) = 10;
+    *(myArray + 5) = 12;
     *(myArray + 6) = 45;
     *(myArray + 7) = 1;
     *(myArray + 8) = 90;
