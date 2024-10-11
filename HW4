@@ -24,12 +24,17 @@ int main()
     temp = malloc(sizeof(int));
 
 
-    // Assign values to the array
-    int values[SIZE] = {12, 56, 89, 87, 30, 12, 45, 1, 90, 16};
-    for (*index = 0; *index < SIZE; (*index)++)
-    {
-        myArray[*index] = values[*index];
-    }
+    // Assign values to the myArray
+    *myArray = 12;
+    *(myArray + 1) = 56;
+    *(myArray + 2) = 89;
+    *(myArray + 3) = 87;
+    *(myArray + 4) = 30;
+    *(myArray + 5) = 10;
+    *(myArray + 6) = 45;
+    *(myArray + 7) = 1;
+    *(myArray + 8) = 90;
+    *(myArray + 9) = 16;
 
     // Find the largest value
     *largest = myArray[0];
