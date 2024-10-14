@@ -4,9 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 10
-#define TRUE 1
-#define FALSE 0
 
 int main()
 {
@@ -15,7 +12,7 @@ int main()
     float *total, *average;
 
     // Allocate memory for the array and other variables
-    myArray = malloc(SIZE * sizeof(int));
+    myArray = malloc(10 * sizeof(int));
     index = malloc(sizeof(int));
     largest = malloc(sizeof(int));
     total = malloc(sizeof(float));  // Allocate as float for accurate summing
@@ -38,7 +35,7 @@ int main()
 
     // Find the largest value
     *largest = myArray[0];
-    for (*index = 1; *index < SIZE; (*index)++)
+    for (*index = 1; *index < 10; (*index)++)
     {
         if (myArray[*index] > *largest)
         {
@@ -49,27 +46,27 @@ int main()
 
     // Calculate the average
     *total = 0.0;
-    for (*index = 0; *index < SIZE; (*index)++)
+    for (*index = 0; *index < 10; (*index)++)
     {
         *total += myArray[*index];
     }
-    *average = *total / SIZE;
+    *average = *total / 10;
     printf("2) The average is %.2f\n\n", *average);
 
     // Check for duplicates
-    *found = FALSE;
-    for (*index = 0; *index < SIZE && *found == FALSE; (*index)++)
+    *found = 0;
+    for (*index = 0; *index < 10 && *found == 0; (*index)++)
     {
-        for (*temp = *index + 1; *temp < SIZE && *found == FALSE; (*temp)++)
+        for (*temp = *index + 1; *temp < 10 && *found == 0; (*temp)++)
         {
             if (myArray[*index] == myArray[*temp])
             {
-                *found = TRUE;
+                *found = 1;
             }
         }
     }
 
-    if (*found == TRUE)
+    if (*found == 1)
     {
         printf("3) The array has duplicates.\n");
     }
